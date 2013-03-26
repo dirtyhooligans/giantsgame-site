@@ -33,7 +33,7 @@ app.get('/', function(request, response)
 
         if ( err ) {
                 response.json({
-                    query : query,
+                    query : data,
                     error : true,
                     data  : err
                 });

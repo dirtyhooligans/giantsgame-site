@@ -1,17 +1,35 @@
-.row
+.row-fluid
     .span12(align="center") 
         h3.muted Are the Giants Playing at Home?
-    .span12
-        .row
-            .span2(align="center").well
-                h4.muted Yesterday
-            .span6(align="center") 
-                .row
-                    h3 Today
-                .row 
-                    The Game Info
+.row-fluid
+    .span3(align="center").well
+        h4.muted Yesterday
+        if schedule.yesterday
+            .row-fluid
+                .span6 #{schedule.yesterday.teams.home}
+                .span6 #{schedule.yesterday.teams.away}
+            .row-fluid
+                .span6 #{schedule.yesterday.scores.home}
+                .span6 #{schedule.yesterday.scores.away}
+                hr
+                #{schedule.yesterday.start}
+        else
+            h5.muted No Game
+    .span6(align="center") 
+        if schedule.today
+            .row
+                h3 Today
+            .row #{schedule.today.summary}
+            .row
+        else
+            .row
+                h3.muted No Game
                 
-            .span2(align="center").well
-                h4 Tomorrow
-.row
-    .span12(align="center") #{schedule.ics}
+    .span3(align="center").well
+        h4 Tomorrow
+        if schedule.tomorrow 
+            .row-fluid #{schedule.tomorrow.summary}
+        else
+            h5.muted No Game
+.row-fluid
+    .span12(align="center") #{schedule.today.start}

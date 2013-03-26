@@ -422,3 +422,225 @@ query is not defined
 [ui] 2013-03-26T05:43:22.000Z - info: searching for: today
 [ui] 2013-03-26T05:43:49.156Z - info: searching for: today
 [ui] 2013-03-26T05:44:31.480Z - info: searching for: today
+[ui] 2013-03-26T18:33:46.104Z - info: http://localhost:3000
+[ui] 2013-03-26T18:33:55.285Z - error: TypeError: /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/ui/views/app.jade:12
+    10|         link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Stalemate|Roboto+Condensed:400,700")
+    11|         link(href="/css/main.css", rel="stylesheet")
+  > 12|     body#view(class=config.ui.envbar ? 'show_env' : '')
+    13|         if config.ui.envbar
+    14|             #env(style="background-color: #{config.ui.envbar}")= process.env.NODE_ENV
+    15|     #wrap
+
+Cannot read property 'envbar' of undefined
+[ui] 2013-03-26T18:34:35.176Z - info: http://localhost:3000
+[ui] 2013-03-26T18:34:38.350Z - info: searching for: today
+[ui] 2013-03-26T18:34:38.876Z - error: ReferenceError: query is not defined
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/ui/controllers/gamebyday.js:36:29
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:76:26)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:47:26
+    at fs.writeFile (fs.js:746:21)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T18:35:17.488Z - info: http://localhost:3000
+[ui] 2013-03-26T18:35:25.441Z - info: searching for: today
+[ui] 2013-03-26T18:35:44.973Z - info: searching for: today
+[ui] 2013-03-26T18:36:21.234Z - info: http://localhost:3000
+[ui] 2013-03-26T18:36:23.458Z - info: searching for: today
+[ui] 2013-03-26T18:36:27.593Z - info: http://localhost:3000
+[ui] 2013-03-26T18:36:42.225Z - info: http://localhost:3000
+[ui] 2013-03-26T18:36:45.357Z - info: searching for: today
+[ui] 2013-03-26T18:37:43.353Z - info: searching for: today
+[ui] 2013-03-26T18:37:51.947Z - info: searching for: today
+[ui] 2013-03-26T18:42:05.440Z - info: searching for: today
+[ui] 2013-03-26T19:01:19.938Z - info: http://localhost:3000
+[ui] 2013-03-26T19:01:30.982Z - info: searching for: today
+[ui] 2013-03-26T19:01:30.995Z - error: TypeError: Cannot call method 'push' of undefined
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:86:41)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:20:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T19:01:59.143Z - info: http://localhost:3000
+[ui] 2013-03-26T19:02:03.764Z - info: searching for: today
+[ui] 2013-03-26T19:02:03.778Z - error: TypeError: Cannot call method 'push' of undefined
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:86:41)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:20:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T19:02:35.499Z - info: http://localhost:3000
+[ui] 2013-03-26T19:02:39.260Z - info: searching for: today
+[ui] 2013-03-26T19:04:17.574Z - info: http://localhost:3000
+[ui] 2013-03-26T19:04:28.731Z - info: searching for: today
+[ui] 2013-03-26T19:05:04.923Z - info: http://localhost:3000
+[ui] 2013-03-26T19:05:06.929Z - info: searching for: today
+[ui] 2013-03-26T19:07:23.281Z - info: http://localhost:3000
+[ui] 2013-03-26T19:07:41.908Z - info: http://localhost:3000
+[ui] 2013-03-26T19:09:11.613Z - info: http://localhost:3000
+[ui] 2013-03-26T19:09:26.240Z - info: http://localhost:3000
+[ui] 2013-03-26T19:09:54.914Z - info: http://localhost:3000
+[ui] 2013-03-26T19:10:48.080Z - info: http://localhost:3000
+[ui] 2013-03-26T19:10:59.515Z - info: searching for: today
+[ui] 2013-03-26T19:10:59.555Z - error: TypeError: Object 1364411459520 has no method 'getUTCFullYear'
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:83:47)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:20:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T19:11:44.682Z - info: http://localhost:3000
+[ui] 2013-03-26T19:11:47.231Z - info: http://localhost:3000
+[ui] 2013-03-26T19:11:56.405Z - info: searching for: today
+[ui] 2013-03-26T19:11:56.423Z - error: TypeError: Object 1364411516410 has no method 'getUTCFullYear'
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:90:46)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:20:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T19:12:25.044Z - info: http://localhost:3000
+[ui] 2013-03-26T19:12:27.167Z - info: http://localhost:3000
+[ui] 2013-03-26T19:12:33.721Z - info: http://localhost:3000
+[ui] 2013-03-26T19:12:38.856Z - info: http://localhost:3000
+[ui] 2013-03-26T19:12:42.037Z - info: searching for: today
+[ui] 2013-03-26T19:13:13.723Z - info: http://localhost:3000
+[ui] 2013-03-26T19:13:15.750Z - info: searching for: today
+[ui] 2013-03-26T19:14:31.512Z - info: http://localhost:3000
+[ui] 2013-03-26T20:37:03.554Z - info: searching for: today
+[ui] 2013-03-26T20:43:11.312Z - info: http://localhost:3000
+[ui] 2013-03-26T20:45:45.235Z - info: searching for: today
+[ui] 2013-03-26T20:53:42.156Z - info: http://localhost:3000
+[ui] 2013-03-26T20:53:54.288Z - info: http://localhost:3000
+[ui] 2013-03-26T21:08:43.566Z - info: searching for: today
+[ui] 2013-03-26T21:10:43.142Z - info: searching for: today
+[ui] 2013-03-26T21:11:44.561Z - info: searching for: today
+[ui] 2013-03-26T21:11:57.935Z - info: searching for: today
+[ui] 2013-03-26T21:13:03.166Z - info: searching for: today
+[ui] 2013-03-26T21:13:30.035Z - info: searching for: today
+[ui] 2013-03-26T21:17:19.625Z - info: searching for: today
+[ui] 2013-03-26T21:18:35.995Z - info: searching for: today
+[ui] 2013-03-26T21:20:46.092Z - info: searching for: today
+[ui] 2013-03-26T21:21:02.828Z - info: searching for: today
+[ui] 2013-03-26T21:21:08.888Z - info: searching for: today
+[ui] 2013-03-26T21:21:36.878Z - info: searching for: today
+[ui] 2013-03-26T21:26:26.820Z - info: searching for: today
+[ui] 2013-03-26T21:27:01.648Z - info: searching for: today
+[ui] 2013-03-26T21:27:14.297Z - info: searching for: today
+[ui] 2013-03-26T21:27:58.505Z - info: http://localhost:3000
+[ui] 2013-03-26T21:28:15.602Z - info: http://localhost:3000
+[ui] 2013-03-26T21:28:31.715Z - info: http://localhost:3000
+[ui] 2013-03-26T21:28:35.376Z - info: http://localhost:3000
+[ui] 2013-03-26T21:28:56.422Z - info: http://localhost:3000
+[ui] 2013-03-26T21:33:30.754Z - info: http://localhost:3000
+[ui] 2013-03-26T21:33:34.260Z - info: http://localhost:3000
+[ui] 2013-03-26T21:33:39.017Z - info: searching for: today
+[ui] 2013-03-26T21:33:53.610Z - info: http://localhost:3000
+[ui] 2013-03-26T21:33:55.293Z - info: searching for: today
+[ui] 2013-03-26T21:34:07.443Z - info: http://localhost:3000
+[ui] 2013-03-26T21:34:09.135Z - info: searching for: today
+[ui] 2013-03-26T21:34:24.738Z - info: http://localhost:3000
+[ui] 2013-03-26T21:34:26.378Z - info: http://localhost:3000
+[ui] 2013-03-26T21:34:29.913Z - info: http://localhost:3000
+[ui] 2013-03-26T21:34:31.454Z - info: searching for: today
+[ui] 2013-03-26T21:35:03.663Z - info: http://localhost:3000
+[ui] 2013-03-26T21:35:06.326Z - info: searching for: today
+[ui] 2013-03-26T21:36:27.583Z - info: http://localhost:3000
+[ui] 2013-03-26T21:36:31.182Z - info: searching for: today
+[ui] 2013-03-26T21:37:31.342Z - info: http://localhost:3000
+[ui] 2013-03-26T21:37:35.822Z - info: searching for: today
+[ui] 2013-03-26T21:43:11.003Z - info: http://localhost:3000
+[ui] 2013-03-26T21:43:39.135Z - info: http://localhost:3000
+[ui] 2013-03-26T21:43:44.708Z - info: http://localhost:3000
+[ui] 2013-03-26T21:43:50.327Z - info: http://localhost:3000
+[ui] 2013-03-26T21:43:57.924Z - info: http://localhost:3000
+[ui] 2013-03-26T21:44:09.534Z - info: http://localhost:3000
+[ui] 2013-03-26T21:44:12.634Z - info: http://localhost:3000
+[ui] 2013-03-26T21:44:15.164Z - info: searching for: today
+[ui] 2013-03-26T21:45:13.378Z - info: http://localhost:3000
+[ui] 2013-03-26T21:45:15.955Z - info: http://localhost:3000
+[ui] 2013-03-26T21:45:23.536Z - info: http://localhost:3000
+[ui] 2013-03-26T21:45:27.354Z - info: searching for: today
+[ui] 2013-03-26T21:46:31.795Z - info: http://localhost:3000
+[ui] 2013-03-26T21:46:33.342Z - info: searching for: today
+[ui] 2013-03-26T21:47:37.036Z - info: http://localhost:3000
+[ui] 2013-03-26T21:47:47.165Z - info: http://localhost:3000
+[ui] 2013-03-26T21:47:48.709Z - info: http://localhost:3000
+[ui] 2013-03-26T21:47:51.275Z - info: http://localhost:3000
+[ui] 2013-03-26T21:47:59.360Z - info: http://localhost:3000
+[ui] 2013-03-26T21:48:01.334Z - info: searching for: today
+[ui] 2013-03-26T21:48:29.508Z - info: http://localhost:3000
+[ui] 2013-03-26T21:48:30.962Z - info: searching for: today
+[ui] 2013-03-26T21:50:18.273Z - info: http://localhost:3000
+[ui] 2013-03-26T21:50:23.980Z - info: searching for: today
+[ui] 2013-03-26T21:50:23.994Z - error: TypeError: Cannot call method 'trim' of undefined
+    at parseEvent (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:61:45)
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:122:56)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:19:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T21:51:06.661Z - info: http://localhost:3000
+[ui] 2013-03-26T21:51:08.795Z - info: http://localhost:3000
+[ui] 2013-03-26T21:51:20.845Z - info: http://localhost:3000
+[ui] 2013-03-26T21:51:30.328Z - info: searching for: today
+[ui] 2013-03-26T21:51:30.345Z - error: TypeError: Cannot call method 'replace' of undefined
+    at trim (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:46:16)
+    at parseEvent (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:65:28)
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:126:56)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:19:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T21:52:07.481Z - info: http://localhost:3000
+[ui] 2013-03-26T21:52:13.095Z - info: http://localhost:3000
+[ui] 2013-03-26T21:52:18.635Z - info: http://localhost:3000
+[ui] 2013-03-26T21:52:21.840Z - info: searching for: today
+[ui] 2013-03-26T21:53:37.127Z - info: searching for: today
+[ui] 2013-03-26T21:56:09.515Z - info: http://localhost:3000
+[ui] 2013-03-26T21:56:26.128Z - info: http://localhost:3000
+[ui] 2013-03-26T21:56:26.713Z - info: http://localhost:3000
+[ui] 2013-03-26T21:56:30.730Z - info: searching for: today
+[ui] 2013-03-26T21:56:55.422Z - info: http://localhost:3000
+[ui] 2013-03-26T21:57:47.563Z - info: http://localhost:3000
+[ui] 2013-03-26T21:58:33.692Z - info: http://localhost:3000
+[ui] 2013-03-26T21:58:52.310Z - info: http://localhost:3000
+[ui] 2013-03-26T21:59:06.948Z - info: http://localhost:3000
+[ui] 2013-03-26T21:59:17.045Z - info: http://localhost:3000
+[ui] 2013-03-26T21:59:44.135Z - info: http://localhost:3000
+[ui] 2013-03-26T22:13:20.745Z - info: http://localhost:3000
+[ui] 2013-03-26T22:13:29.866Z - info: http://localhost:3000
+[ui] 2013-03-26T22:13:35.590Z - info: searching for: today
+[ui] 2013-03-26T22:13:35.604Z - error: SyntaxError: Invalid flags supplied to RegExp constructor 's'
+    at new RegExp (unknown source)
+    at parseEvent (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:79:32)
+    at module.exports.getByDay (/Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:150:56)
+    at /Library/WebServer/Documents/dirtyhooligans/giantsga.me/app/lib/schedule.js:19:22
+    at fs.readFile (fs.js:176:14)
+    at Object.oncomplete (fs.js:297:15)
+[ui] 2013-03-26T22:13:52.214Z - info: http://localhost:3000
+[ui] 2013-03-26T22:13:55.967Z - info: searching for: today
+[ui] 2013-03-26T22:14:37.198Z - info: http://localhost:3000
+[ui] 2013-03-26T22:14:46.796Z - info: http://localhost:3000
+[ui] 2013-03-26T22:14:49.411Z - info: searching for: today
+[ui] 2013-03-26T22:16:17.683Z - info: http://localhost:3000
+[ui] 2013-03-26T22:16:25.461Z - info: searching for: today
+[ui] 2013-03-26T22:16:49.592Z - info: http://localhost:3000
+[ui] 2013-03-26T22:16:51.511Z - info: searching for: today
+[ui] 2013-03-26T22:18:58.372Z - info: http://localhost:3000
+[ui] 2013-03-26T22:19:12.008Z - info: searching for: today
+[ui] 2013-03-26T22:29:03.137Z - info: searching for: today
+[ui] 2013-03-26T22:30:20.820Z - info: http://localhost:3000
+[ui] 2013-03-26T22:32:03.595Z - info: http://localhost:3000
+[ui] 2013-03-26T22:32:21.284Z - info: searching for: today
+[ui] 2013-03-26T22:32:36.428Z - info: http://localhost:3000
+[ui] 2013-03-26T22:32:45.087Z - info: searching for: today
+[ui] 2013-03-26T22:32:58.718Z - info: http://localhost:3000
+[ui] 2013-03-26T22:35:00.031Z - info: http://localhost:3000
+[ui] 2013-03-26T22:35:04.203Z - info: http://localhost:3000
+[ui] 2013-03-26T22:35:49.836Z - info: http://localhost:3000
+[ui] 2013-03-26T22:35:54.896Z - info: http://localhost:3000
+[ui] 2013-03-26T22:51:43.920Z - info: searching for: today
+[ui] 2013-03-26T22:55:07.907Z - info: http://localhost:3000
+[ui] 2013-03-26T22:55:17.520Z - info: http://localhost:3000
+[ui] 2013-03-26T22:55:27.275Z - info: searching for: today
+[ui] 2013-03-26T22:56:00.950Z - info: http://localhost:3000
+[ui] 2013-03-26T22:56:02.906Z - info: searching for: today
+[ui] 2013-03-26T22:57:36.186Z - info: http://localhost:3000
+[ui] 2013-03-26T22:57:41.188Z - info: searching for: today
+[ui] 2013-03-26T22:58:47.487Z - info: searching for: today
+[ui] 2013-03-26T22:59:19.871Z - info: searching for: today
+[ui] 2013-03-26T23:04:27.753Z - info: searching for: today
+[ui] 2013-03-26T23:05:35.993Z - info: searching for: today
+[ui] 2013-03-26T23:05:47.479Z - info: searching for: today
+[ui] 2013-03-26T23:14:21.552Z - info: searching for: today

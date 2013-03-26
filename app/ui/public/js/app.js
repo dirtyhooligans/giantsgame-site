@@ -4,6 +4,8 @@ $(document).ready(function(){
 
 });
 
+var debugObj;
+
 function loadPage(page, data) {
     console.log('load page: ' + page);
     $.ajax({
@@ -12,7 +14,7 @@ function loadPage(page, data) {
         data: data,
         success: function(data) {
             console.log(data);
-            
+            debugObj = data;
             $('#page').html(data.display);
             
         },
