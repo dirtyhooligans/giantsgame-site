@@ -1,6 +1,6 @@
 {
-    "name" : "sympli-read",
-    "description" : "app description here",
+    "name" : "giantsga.me-app",
+    "description" : "a simple site to check if the giants play today",
     "version" : "0.1.0",
     "dependencies" : {
         "async"            : "git://github.com/alexgorbatchev/async.git",
