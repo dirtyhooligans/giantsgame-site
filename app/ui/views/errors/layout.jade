@@ -1,0 +1,24 @@
+//- Layout for all error pages
+!!! 5
+html(lang="en")
+	head
+		title App Error
+		meta(charset="utf-8")
+		meta(http-equiv="content-type", content="text/html; charset=utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="shortcut icon", href="/images/favicon.ico")
+		link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Kaushan+Script")
+		link(href="/css/main.css", rel="stylesheet")
+	body
+		#header
+			.navbar.navbar-fixed-top
+				.navbar-inner
+					.container
+						a.brand(href="/#home") Error
+						span#version.navbar-text  dang it, something went wrong
+
+		.container
+			.row
+				.span12
+					block body
+						// errors/layout.jade

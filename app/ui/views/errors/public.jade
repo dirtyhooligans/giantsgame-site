@@ -1,0 +1,12 @@
+//- This page is rendered in response to the PublicError being thrown
+
+extends layout
+
+append body
+	// errors/public.jade
+	.row
+		.span12
+			.hero-unit
+				h1 Good news everyone! All kittens are fine!
+				p!= error.message
+

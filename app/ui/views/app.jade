@@ -1,0 +1,30 @@
+!!! 5
+html(lang="en")
+    head
+        title #{config.info.name}
+        meta(charset="utf-8")
+        meta(http-equiv="content-type", content="text/html; charset=utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(description="#{config.info.tagline} - #{config.info.description}")
+        link(rel="shortcut icon", href="/favicon.ico")
+        link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Stalemate|Roboto+Condensed:400,700")
+        link(href="/css/main.css", rel="stylesheet")
+    body#view(class=config.ui.envbar ? 'show_env' : '')
+        if config.ui.envbar
+            #env(style="background-color: #{config.ui.envbar}")= process.env.NODE_ENV
+    #wrap
+        include header
+        #page.container Initiating...
+        #push
+    include footer
+    block scripts
+        script(type="text/javascript", src="/js/vendor/jquery-1.9.1.js")
+        script(type="text/javascript", src="/js/jquery-topmost.js")
+        script(type="text/javascript", src="/js/vendor/jade.js")
+        script(type="text/javascript", src="/js/vendor/moment.js")
+        script(type="text/javascript", src="/js/vendor/bootstrap/bootstrap-tab.js")
+        script(type="text/javascript", src="/js/vendor/bootstrap/bootstrap-dropdown.js")
+        script(type="text/javascript", src="/js/vendor/bootstrap/bootstrap-typeahead.js")
+        script(type="text/javascript", src="/js/vendor/bootstrap/bootstrap-tooltip.js")
+        script(type="text/javascript", src="/js/spinner.min.js")
+        script(type="text/javascript", src="/js/app.js")

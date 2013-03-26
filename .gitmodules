@@ -1,0 +1,9 @@
+[submodule "vendor/bootstrap"]
+    path = vendor/bootstrap
+    url = git://github.com/twitter/bootstrap.git
+[submodule "vendor/finchjs"]
+    path = vendor/finchjs
+    url = git://github.com/stoodder/finchjs.git
+[submodule "vendor/moment"]
+    path = vendor/moment
+    url = git://github.com/timrwood/moment.git

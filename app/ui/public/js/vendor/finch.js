@@ -1,0 +1,1 @@
+../../../../../vendor/finchjs/scripts/finch.js

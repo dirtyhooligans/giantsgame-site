@@ -1,0 +1,12 @@
+//- This page is rendered in response to the NotFoundError being thrown
+
+extends layout
+
+append body
+	// errors/404.jade
+	.row.error.error-404
+		.span12
+			.hero-unit
+				h1 These aren't the droids you are looking for...
+				p In other words, URL you requested wasn't found
+

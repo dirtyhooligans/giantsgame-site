@@ -1,0 +1,17 @@
+//- This page is rendered in response to the all unhandled error being thrown
+
+extends layout
+
+append body
+	// errors/500.jade
+	.row.error.error-500
+		.span12
+			.hero-unit
+				if error.stack.indexOf('AssertionError') === 0
+					h1= error.message
+					p You've got issues... who doesn't?
+				else
+					h1 We've got issues... who doesn't?
+					p Something is wrong, we're probably still working on this...
+
+			pre!= error.stack

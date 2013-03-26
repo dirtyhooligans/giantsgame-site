@@ -1,0 +1,13 @@
+//- This page is rendered in response to the AuthError being thrown
+
+extends layout
+
+append body
+	// errors/auth.jade
+	.row.error.error-auth
+		.span12
+			.hero-unit
+				h1 You aren't logged in!
+				p May we suggest you log in? Please <a href="/login">click here</a> to do so.
+
+

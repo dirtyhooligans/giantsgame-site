@@ -1,0 +1,44 @@
+@import "../../../vendor/bootstrap/less/bootstrap.less";
+@import "../../../vendor/bootstrap/less/responsive.less";
+
+
+body {
+    background     : white;
+}
+
+.navbar {
+    font-family: 'Roboto Condensed', sans-serif;
+    .brand {
+        color       : #333;
+    }
+
+    #version {      
+        margin-top : 10px;
+    }
+}
+
+.show_env {
+    padding-top : 82px;
+
+    .navbar-fixed-top {
+        top : 22px;
+    }
+
+    #env {
+        position   : fixed;
+        left       : 0;
+        right      : 0;
+        top        : 0;
+        text-align : center;
+        background : gray;
+        color      : white;
+        padding    : 2px;
+        z-index    : 100000;
+        font-size  : 13px;
+    }
+}
+
+#footer { 
+    font-family: 'Stalemate', cursive;
+    font-size: 1.8em;
+}
