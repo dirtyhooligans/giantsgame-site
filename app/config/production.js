@@ -9,7 +9,7 @@ module.exports = {
     },
 
     ui : {
-        envbar      : 'lavender'
+        
     },
 
     schedule : {
