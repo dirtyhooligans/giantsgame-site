@@ -15,7 +15,8 @@ node:
 node-prod:
 	-@killall node-dev
 	-@killall node
-	@set NODE_ENV=production && node_modules/forever/bin/forever start app/ui/index.js
+	-@node_modules/forever/bin/forever stop app/ui/index.js
+	@export NODE_ENV=production && node_modules/forever/bin/forever start app/ui/index.js
 
 log:
 	@touch logs/app.log
@@ -23,3 +24,6 @@ log:
 
 dev: 
 	@make node
+
+prod:
+	@make node-prod

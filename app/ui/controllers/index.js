@@ -5,9 +5,12 @@ var express   = require('express'),
     //db        = require('../../db'),
     config    = require('../../config'),
     logger    = require('../../lib/logger')
+
     ;
 
 var app  = module.exports = express(),
+    RedisStore = require('connect-redis')(express),
+    redis = require("redis").createClient(),
     home = __dirname + '/..'
     ;
 
@@ -32,6 +35,12 @@ app.configure(function()
 
     app.use(express.cookieParser(config.info.cookieKey));
     app.use(express.session(config.session));
+
+    app.use(express.session({
+      secret: config.session.key,
+      store: new RedisStore({ host: 'localhost', port: config.info.port, client: redis })
+    }));
+
     app.use(express.bodyParser());
     app.use(express.static(home + '/public'));
    
