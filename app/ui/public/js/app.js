@@ -1,6 +1,8 @@
+var app = {};
+
 $(document).ready(function(){
 
-    loadPage('home');
+    //loadPage('home');
 
 });
 

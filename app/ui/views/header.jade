@@ -1,13 +1,9 @@
 .navbar.navbar-fixed-top
     .navbar-inner
         .container
-            a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-            a.brand(href='#') #{config.info.name} 
+            a.brand(href='#home') #{config.info.name} 
                 span.muted ?
-            a(href="http://sanfrancisco.giants.mlb.com/").pull-right
+            a(href="http://sanfrancisco.giants.mlb.com/", target="_blank").pull-right
                 img(src="images/sf.png",style="height:20px;padding-top:12px")
             ul.nav.pull-right
                 li
