@@ -50,9 +50,7 @@ function trim(str) {
 }
 
 function parseEvent(data) {
-
-    String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
-
+    
     var result = data,
         extract_teams
         ;
