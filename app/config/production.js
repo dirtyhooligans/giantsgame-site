@@ -3,7 +3,7 @@ module.exports = {
         name        : 'GaintsGa.me',
         tagline     : 'a simple site to check if the giants are playing or not',
         description : '',
-        port        : 3000,
+        port        : 8080,
         cookieKey   : 'keyboard cat',
         salt        : 'more keyboard cat!'
     },
