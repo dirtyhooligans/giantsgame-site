@@ -12,6 +12,11 @@ node:
 	-@killall node
 	@NODE_DEV_IGNORE=./tmp ./node_modules/.bin/node-dev ./app/ui/index.js
 
+node-prod:
+	-@killall node-dev
+	-@killall node
+	@set NODE_ENV=production && node_modules/forever/bin/forever start app/ui/index.js
+
 log:
 	@touch logs/app.log
 	@tail -f logs/app.log

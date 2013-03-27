@@ -1,12 +1,15 @@
 module.exports = {
     info : {
-        title       : 'GaintsGa.me',
-        tagline     : 'root',
+        name        : 'GaintsGa.me',
+        tagline     : 'a simple site to check if the giants are playing or not',
         description : '',
-        port      : 8080,
-        cookieKey : 'keyboard cat',
-        salt      : 'more keyboard cat!',
-        envbar    : 'lavender'
+        port        : 3000,
+        cookieKey   : 'keyboard cat',
+        salt        : 'more keyboard cat!'
+    },
+
+    ui : {
+        envbar      : 'lavender'
     },
 
     schedule : {
