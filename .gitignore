@@ -9,6 +9,7 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-node_modules
-app/tmp/
+app/tmp/*
 app/config/development.js
+logs/*
+node_modules

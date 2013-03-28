@@ -1,0 +1,87 @@
+#schedule.row-fluid
+    .span12(align="center") 
+        .row-fluid
+            h4.muted Are the Giants Playing at Home #{search.display}? 
+        .row-fluid
+            if schedule.day_of && schedule.day_of.teams.home == 'San Francisco'
+                h2 Yup
+            else
+                h2 Nope
+hr
+.row-fluid &nbsp;
+.row-fluid
+    .span9(align="center") 
+        if schedule.day_of
+            if schedule.day_of.teams.home == 'San Francisco'
+                .row
+                    .span5
+                        .row &nbsp;
+                        .row 
+                            h3 #{schedule.day_of.teams.home}
+                    .span2
+                        .row &nbsp;
+                        .row.well 
+                            h2.muted vs
+                        #dayof-gametime.row
+                            h3 Time
+                    .span5
+                        .row &nbsp;
+                        .row 
+                            h3 #{schedule.day_of.teams.away}
+                        .row &nbsp;
+                        .row &nbsp;
+            else
+                .row
+                    .span5
+                        .row &nbsp;
+                        .row 
+                            h3 #{schedule.day_of.teams.away}
+                    .span2
+                        .row &nbsp;
+                        .row.well 
+                            h2.muted @
+                        .row.muted starts at
+                        #dayof-gametime.row
+                            h3 Time
+                    .span5
+                        .row &nbsp;
+                        .row 
+                            h3 #{schedule.day_of.teams.home}
+                        .row &nbsp;
+                        .row &nbsp;
+        else
+            .row
+                h3.muted No Game, darn...
+                
+    .span3(align="center").well
+        if schedule.day_after 
+            h4 #{schedule.day_after.displayDay}
+        else
+            h4 #{schedule.next_game.displayDay}
+        if schedule.day_after 
+            .row-fluid
+            if schedule.day_after.teams.home == 'San Francisco'
+                .row-fluid(align="center") At Home vs
+                .row-fluid(align="center")
+                    h3 #{schedule.day_after.teams.away}
+            else
+                .row-fluid(align="center") Away at
+                .row-fluid(align="center") 
+                    h3 #{schedule.day_after.teams.home}
+        else
+            h5.muted No Game
+            hr
+            if schedule.next_game.teams.home == 'San Francisco'
+                .row-fluid(align="center") At Home vs
+                .row-fluid(align="center")
+                    h3 #{schedule.next_game.teams.away}
+            else
+                .row-fluid(align="center") Away at
+                .row-fluid(align="center") 
+                    h3 #{schedule.next_game.teams.home}
+                .row-fluid
+        #nextgame_time.row-fluid Game Time:
+            h4 
+
+
+script(type="text/javascript", src="/js/schedule.js")

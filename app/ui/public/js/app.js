@@ -6,17 +6,36 @@ $(document).ready(function(){
 
 });
 
-var debugObj;
+var pageData = {};
 
 function loadPage(page, data) {
-    console.log('load page: ' + page);
+    var p,
+        d = data || {}
+        ;
+
+    switch (page) {
+        case "today" : 
+            p = "schedule";
+            d.day = "today";
+            break;
+        case "tomorrow" : 
+            p = "schedule";
+            d.day = "tomorrow";
+            break;
+        default :
+            p = page;
+            break;
+    }
+
+    console.log('load page: ' + p + ' data: ', d);
     $.ajax({
         dataType: "json",
-        url: '/' + page,
-        data: data,
+        url: '/' + p,
+        data: d,
         success: function(data) {
-            console.log(data);
-            debugObj = data;
+            console.log('pageData: ', data);
+            pageData = data;
+
             $('#page').html(data.display);
             
         },

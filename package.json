@@ -11,6 +11,7 @@
         "console-trace"    : "0.1.x",
         "connect-redis"    : "1.4.5",
         "redis"            : "0.8.2",
+        "moment"           : "2.0.x",
         "ical"             : "0.0.6"
     },
     "devDependencies" : {

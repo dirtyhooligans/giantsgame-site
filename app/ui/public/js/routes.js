@@ -25,6 +25,8 @@ $(document).ready(function(){
 
     route('home');
     route('today');
+    route('tomorrow');
+    route('schedule');
     route('about');
     
     app.navigate = function(url)

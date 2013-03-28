@@ -45,14 +45,9 @@ app.configure(function()
     app.use(express.static(home + '/public'));
    
     app.use(app.router);
-
-    // app.use('/'     , require('./upload'));
-    // app.use('/'     , require('./project'));
-    // app.use('/api'  , require('./api'));
-    // app.use('/test' , require('./test'));
     
-    app.use('/today', require('./gamebyday'));
     app.use('/about', require('./about'))
+    app.use('/schedule', require('./schedule'));
 
     // the error handler is strategically placed *below* the app.router; if it
     // were above it would not receive errors from app.get() etc 
