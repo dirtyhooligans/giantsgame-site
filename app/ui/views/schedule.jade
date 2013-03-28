@@ -18,10 +18,15 @@ hr
                         .row &nbsp;
                         .row 
                             h3 #{schedule.day_of.teams.home}
+                        .row &nbsp;
+                        .row 
+                        if schedule.day_of.scores
+                            h1 #{schedule.day_of.scores.home}
                     .span2
                         .row &nbsp;
                         .row.well 
                             h2.muted vs
+                        #dayof-gametime-title.row.muted starts at
                         #dayof-gametime.row
                             h3 Time
                     .span5
@@ -29,18 +34,24 @@ hr
                         .row 
                             h3 #{schedule.day_of.teams.away}
                         .row &nbsp;
-                        .row &nbsp;
+                        .row 
+                        if schedule.day_of.scores
+                            h1 #{schedule.day_of.scores.away}
             else
                 .row
                     .span5
                         .row &nbsp;
                         .row 
                             h3 #{schedule.day_of.teams.away}
+                        .row &nbsp;
+                        .row 
+                        if schedule.day_of.scores
+                            h1 #{schedule.day_of.scores.away}
                     .span2
                         .row &nbsp;
                         .row.well 
                             h2.muted @
-                        .row.muted starts at
+                        #dayof-gametime-title.row.muted starts at
                         #dayof-gametime.row
                             h3 Time
                     .span5
@@ -48,7 +59,9 @@ hr
                         .row 
                             h3 #{schedule.day_of.teams.home}
                         .row &nbsp;
-                        .row &nbsp;
+                        .row 
+                        if schedule.day_of.scores
+                            h1 #{schedule.day_of.scores.home}
         else
             .row
                 h3.muted No Game, darn...
