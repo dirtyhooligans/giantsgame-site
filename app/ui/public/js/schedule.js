@@ -56,7 +56,7 @@ var initSchedule = function() {
                 gametime_title = todaysGame.gameData.inning_state;
                 gametime = todaysGame.gameData.inning;
             }
-            else if ( todaysGame.gameData.status == "Final" )
+            else if ( todaysGame.gameData.status == "Final" || todaysGame.gameData.status == "Game Over" )
             {
                 if ( isHomeTeam )
                 {
