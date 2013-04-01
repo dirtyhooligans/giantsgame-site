@@ -58,34 +58,18 @@ var initSchedule = function() {
             }
             else if ( todaysGame.gameData.status == "Final" || todaysGame.gameData.status == "Game Over" )
             {
-                if ( isHomeTeam )
+                if ( team_score > opp_score )
                 {
-
-                    if ( todaysGame.scores.home > todaysGame.scores.away )
-                    {
-                        
-                        gametime_title = 'yay.. they';
-                        gametime = 'WON';
-                    }
-                    else
-                    {
-                        gametime_title = 'oh darn, they';
-                        gametime = 'LOST';
-                    }
+                    
+                    gametime_title = 'yay.. they';
+                    gametime = 'WON';
                 }
                 else
                 {
-                    if ( todaysGame.scores.home < todaysGame.scores.away )
-                    {
-                        gametime_title = 'yay.. they';
-                        gametime = 'WON';
-                    }
-                    else
-                    {
-                        gametime_title = 'oh darn, they';
-                        gametime = 'LOST';
-                    }
+                    gametime_title = 'oh darn, they';
+                    gametime = 'LOST';
                 }
+                
             }
             $("#teamScore h1").html(team_score);
             $("#oppScore h1").html(opp_score);
