@@ -14,6 +14,10 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+
+}
+
 .navbar {
     font-family: 'Roboto Condensed', sans-serif;
     .brand {
@@ -46,7 +50,83 @@ body {
     }
 }
 
+#nextgame {
+    min-height: 320px;
+    background-color: '#ff0';
+}
+
+#teamCity, #oppCity{
+    text-transform: uppercase;
+}
+
+#teamProbables, #oppProbables {
+    font-size: 12px;
+}
+
+#upcoming > div {
+    min-height : 150px;
+}
+
+#upcoming > div {
+    background-color: #e1e1e1;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px #666;
+        box-shadow: inset 0px 0px 2px 0px #666;
+}
+    #upcoming > div .day {
+        font-size: 12px;
+        color: #777;
+        padding-top: 5px;
+    }
+    #upcoming > div .vsat {
+        font-size: 16px;
+        color: #777;
+        padding-top: 5px;
+    }
+    #upcoming > div .opp {
+        font-size: 15px;
+        color: #555;
+        padding-top: 5px;
+        text-weight: bold;
+    }
+    #upcoming > div .opprecord {
+        font-size: 12px;
+        color: #666;
+    }
+    #upcoming > div .gametime {
+        font-size: 14px;
+        color: #666;
+        padding-top: 5px;
+    }
+    #upcoming > div .morelink {
+        font-size: 10px;
+        color: #777;
+        padding-bottom: 5px;
+    }
+    #upcoming > div .nogame {
+        font-size: 14px;
+        color: #777;
+        padding-top: 40px;
+        text-transform:uppercase;
+
+    }
+@media (max-width: 767px) {
+    #upcoming > div {
+        min-height: 54px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
 #footer { 
     font-family: 'Stalemate', cursive;
     font-size: 1.8em;
+}
+
+#footer .version {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #666;
+    font-size: 12px;
 }

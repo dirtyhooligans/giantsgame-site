@@ -26,6 +26,7 @@ $(document).ready(function(){
     route('home');
     route('today');
     route('tomorrow');
+    route('yesterday');
     route('schedule');
     route('about');
     

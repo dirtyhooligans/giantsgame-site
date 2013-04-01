@@ -5,7 +5,8 @@ var express    = require('express'),
     //db         = require('../../db'),
     logger     = require('../../lib/logger'),
     tpl        = require('./templates'),
-    schedule   = require('../../lib/schedule')
+    mlbcom     = require('../../mlbcom_util.js'),
+    moment     = require('moment')
     ;
 
 var app = module.exports = express();
@@ -18,18 +19,21 @@ app.configure(function()
     })); 
 });
 
-app.get('/', function(request, response)
+app.get('/getdatabyurl', function(request, response)
 {
-    var day  = request.query['d'] || 'today',
-        format = request.query['f'] || 'html'
+    //config.modifyByHost(request.host);
+    
+    var url  = request.query['u'] || false,
+        date = request.query['d'] || false
         ;
-    logger.info('searching for: ' + day);
+    logger.info('searching for: ' + url);
     
     var options = {
-                    day : day
+                    url  : url,
+                    date : date
                   };
 
-    schedule.getByDay(options, function(err, data) {
+    mlbcom.getGameDataByUrl(options, function(err, data) {
 
         if ( err ) {
                 response.json({
@@ -60,6 +64,12 @@ app.get('/', function(request, response)
             }
         }
     });
+
+});
+
+
+
+
 
 });
 

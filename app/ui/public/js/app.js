@@ -22,6 +22,10 @@ function loadPage(page, data) {
             p = "schedule";
             d.day = "tomorrow";
             break;
+        case "yesterday" : 
+            p = "schedule";
+            d.day = "yesterday";
+            break;
         default :
             p = page;
             break;
@@ -33,11 +37,19 @@ function loadPage(page, data) {
         url: '/' + p,
         data: d,
         success: function(data) {
-            console.log('pageData: ', data);
-            pageData = data;
-
-            $('#page').html(data.display);
-            
+            if ( data )
+            {
+                if ( data.error )
+                {
+                    console.log('Error: ' + data.error);
+                }
+                else 
+                {
+                    console.log('pageData: ', data);
+                    pageData = data;
+                    $('#page').html(data.display);
+                }
+            }
         },
         failure : function(data) {
             console.log('error loading page: ' + data);

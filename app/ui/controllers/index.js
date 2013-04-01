@@ -58,6 +58,8 @@ app.configure(function()
 
 app.get('/', function(request, response)
 {
+    //config.modifyByHost(request.host);
+
     response.locals = {
         config : config
     };
