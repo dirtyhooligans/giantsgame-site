@@ -28,7 +28,7 @@ var initSchedule = function() {
             team_probables_pitcher,
             opp_probables_pitcher
             ;
-        if ( todaysGame.gameData.status == "Preview" )
+        if ( todaysGame.gameData.status == "Preview" || todaysGame.gameData.status == "Pre-Game" )
         {
             //gametime_title = todaysGame.;
             gametime = moment(todaysGame.start).add('hours', timezoneOffset).format('LT');
