@@ -3,6 +3,13 @@
         .container
             a.brand(href='#home') #{config.info.name} 
                 span.muted ?
+            ul.nav.pull-left#days
+                li.today
+                    a(href="/#today") Today
+                li.tomorrow
+                    a(href="/#tomorrow") Tomorrow
+                li.yesterday
+                    a(href="/#yesterday") Yesterday
             a(href="http://sanfrancisco.giants.mlb.com/", target="_blank").pull-right
                 img(src="images/sf.png",style="height:20px;padding-top:12px")
             ul.nav.pull-right

@@ -4,7 +4,8 @@ var express   = require('express'),
     path      = require('path'),
     //db        = require('../../db'),
     config    = require('../../config'),
-    logger    = require('../../lib/logger')
+    logger    = require('../../lib/logger'),
+    gitUtil   = require('../../lib/git_util')
 
     ;
 
@@ -52,6 +53,15 @@ app.configure(function()
     // the error handler is strategically placed *below* the app.router; if it
     // were above it would not receive errors from app.get() etc 
     app.use(require('../../lib/errors').middleware);
+
+    gitUtil.getCurrentVersion(__dirname, function(err, version)
+    {
+        if(err)
+            throw new Error('Unable to determine GIT version, is .git folder missing?\n\n' + err.stack);
+
+        logger.info(version);
+        config.version = version;
+    });
 
 });
 

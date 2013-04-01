@@ -1,5 +1,6 @@
 var scheduleData,
     timezoneOffset = -3 // EST to PST
+    upcomingLoaded = false;
     ;
 
 var updateSchedule = function(date) {

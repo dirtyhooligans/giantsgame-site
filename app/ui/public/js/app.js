@@ -31,6 +31,11 @@ function loadPage(page, data) {
             break;
     }
 
+    $('#days li').each(function(){
+        $(this).removeClass('active');
+    });
+    $("li."+d.day).addClass('active');
+
     console.log('load page: ' + p + ' data: ', d);
     $.ajax({
         dataType: "json",
@@ -48,6 +53,9 @@ function loadPage(page, data) {
                     console.log('pageData: ', data);
                     pageData = data;
                     $('#page').html(data.display);
+
+                    
+
                 }
             }
         },
