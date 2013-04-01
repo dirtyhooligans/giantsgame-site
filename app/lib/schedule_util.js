@@ -124,6 +124,8 @@ function parseEvent(data, callback) {
         //console.log('data: ', data);
         if ( data.home_team_city == 'LA Dodgers')
                 data.home_team_city = 'Los Angeles';
+            
+        result.gameStatus = data.status || 'Unknown';
         result.gameData = data;
         callback(err, result); 
     });

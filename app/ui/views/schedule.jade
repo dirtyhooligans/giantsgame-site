@@ -29,7 +29,7 @@ hr
                         h3 Team
                     #teamInfo.row-fluid (0 - 0)
                     .row-fluid &nbsp;
-                    if schedule.day_of.inTheFuture
+                    if schedule.day_of.gameStatus
                         #teamProbables.row-fluid
                             .row-fluid.pitcher_name Name
                             .row-fluid.pitcher_info Info
@@ -52,7 +52,7 @@ hr
                         h3 Opp
                     #oppInfo.row-fluid (0 - 0)
                     .row-fluid &nbsp;
-                    if schedule.day_of.inTheFuture
+                    if schedule.day_of.gameStatus
                         #oppProbables.row-fluid
                             .row-fluid.pitcher_name Name
                             .row-fluid.pitcher_info Info

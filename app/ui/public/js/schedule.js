@@ -86,10 +86,9 @@ var initSchedule = function() {
                         gametime = 'LOST';
                     }
                 }
-
-                $("#teamScore h1").html(team_score);
-                $("#oppScore h1").html(opp_score);
             }
+            $("#teamScore h1").html(team_score);
+            $("#oppScore h1").html(opp_score);
         }
 
         $("#dayof-gametime-title").html(gametime_title);
