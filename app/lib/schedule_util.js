@@ -81,8 +81,6 @@ function parseEvent(data, callback) {
     result.isSpringTraining = summary.search(/Spring:/) > -1 ? true : false;
     if ( result.isSpringTraining )
         summary = summary.replace('Spring: ', '');
-    
-    result.inTheFuture = summary.search(/at/) > -1 ? true : false;
 
     result.hasScore = summary.search(/\-/) > -1 ? true : false;
 
@@ -124,7 +122,8 @@ function parseEvent(data, callback) {
         //console.log('data: ', data);
         if ( data.home_team_city == 'LA Dodgers')
                 data.home_team_city = 'Los Angeles';
-            
+
+        result.inTheFuture = (data.status == 'Pre-Grame' || data.status == 'Preview') ? true : false;
         result.gameStatus = data.status || 'Unknown';
         result.gameData = data;
         callback(err, result); 
