@@ -1,6 +1,6 @@
 module.exports = {
     info : {
-        name        : 'GaintsGa.me',
+        name        : 'GiantsGa.me',
         tagline     : 'a simple site to check if the giants are playing or not',
         description : '',
         port        : 8080,
