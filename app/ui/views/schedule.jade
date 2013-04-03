@@ -63,7 +63,10 @@ hr
             #gameLocation.row.muted(align="center") Location Info
         else
             .row
-                h3.muted Dang... no game today
+                if search.display 
+                    h3.muted Dang.. No Game #{search.display}
+                else
+                    h3.muted Dang... No Game
                 
     #nextgame.span3(align="center").well
         if search.display == 'Today'
