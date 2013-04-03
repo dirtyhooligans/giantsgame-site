@@ -66,7 +66,12 @@ hr
                 h3.muted Dang... no game today
                 
     #nextgame.span3(align="center").well
-        if search.display == 'Yesterday'
+        if search.display == 'Today'
+            if (schedule.day_after)
+                h4 #{schedule.day_after.displayDay}
+            else
+                h4 Tomorrow
+        else if search.display == 'Yesterday'
             if (schedule.day_after)
                 h4 #{schedule.day_after.displayDay}
             else
