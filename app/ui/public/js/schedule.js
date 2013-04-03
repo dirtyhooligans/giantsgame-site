@@ -18,10 +18,15 @@ var initSchedule = function() {
         var gametime,
             gametime_title,
             isHomeTeam = (todaysGame.teams.home == 'San Francisco') ? true : false,
-            team_name = isHomeTeam ? todaysGame.gameData.home_team_name : todaysGame.gameData.away_team_name,
-            team_city = isHomeTeam ? todaysGame.gameData.home_team_city : todaysGame.gameData.away_team_city,
-            opp_name  = isHomeTeam ? todaysGame.gameData.away_team_name : todaysGame.gameData.home_team_name,
-            opp_city  = isHomeTeam ? todaysGame.gameData.away_team_city : todaysGame.gameData.home_team_city,
+            team_name  = isHomeTeam ? todaysGame.gameData.home_team_name : todaysGame.gameData.away_team_name,
+            team_city  = isHomeTeam ? todaysGame.gameData.home_team_city : todaysGame.gameData.away_team_city,
+            opp_name   = isHomeTeam ? todaysGame.gameData.away_team_name : todaysGame.gameData.home_team_name,
+            opp_city   = isHomeTeam ? todaysGame.gameData.away_team_city : todaysGame.gameData.home_team_city,
+            team_wins  = isHomeTeam ? todaysGame.gameData.home_win  : todaysGame.gameData.away_win,
+            team_loss  = isHomeTeam ? todaysGame.gameData.home_loss : todaysGame.gameData.away_loss,
+            opp_wins   = isHomeTeam ? todaysGame.gameData.away_win  : todaysGame.gameData.home_win,
+            opp_loss   = isHomeTeam ? todaysGame.gameData.away_loss : todaysGame.gameData.home_loss,
+
             location_info = todaysGame.location,
 
             team_score,
@@ -42,8 +47,8 @@ var initSchedule = function() {
             $("#oppProbables .pitcher_name").html(opp_probable_pitcher.first + ' ' + opp_probable_pitcher.last);
             $("#oppProbables .pitcher_info").html('ERA: '+opp_probable_pitcher.era + ' (' + opp_probable_pitcher.wins + '-' + opp_probable_pitcher.losses + ')');
             
-
-
+            $(".team-record").html('(' + team_wins + ' - ' + team_loss + ')');
+            $(".opp-record").html('(' + opp_wins + ' - ' + opp_loss + ')');
 
         }
         else
