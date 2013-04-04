@@ -48,9 +48,9 @@ app.configure(function()
 
     app.use(sites.config(config));
 
-    sites.register('local.giantsga.me', require('../../config/sites/giantsga.me'));
+    //sites.register('local.giantsga.me', require('../../config/sites/giantsga.me'));
     sites.register('giantsga.me', require('../../config/sites/giantsga.me'));
-    sites.register('local.dodgersga.me', require('../../config/sites/dodgersga.me'));
+    //sites.register('local.dodgersga.me', require('../../config/sites/dodgersga.me'));
     sites.register('dodgersga.me', require('../../config/sites/dodgersga.me'));
    
     app.use(app.router);

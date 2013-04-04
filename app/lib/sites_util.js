@@ -8,7 +8,7 @@ Sites.prototype.config = function(cfg) {
     return function config(req, res, next){
         console.log('config return', req.headers.host);
         if (!req.headers.host) return next();
-        var host = req.headers.host.split(':')[0];
+        var host = req.headers.host.split(':')[0].replace('www.', '').replace('local.', '');
         var site = hostDictionary[host];
         if (!site) return next();
         //if ('function' == typeof server) return server(req, res, next);

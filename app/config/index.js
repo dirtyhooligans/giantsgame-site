@@ -25,7 +25,7 @@ function merge(obj1, obj2) {
 config.setSite = function(cfg, next){
     
     //console.log('set site config', cfg);
-
+    
     config = merge(config, cfg);
 
     next();
