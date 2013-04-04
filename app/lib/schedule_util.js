@@ -13,7 +13,7 @@ function getSchedule(url, callback) {
         file
         ;
 
-    var path = __dirname + '/../tmp/'+moment().format('YYYYMMDD')+'-schedule-full.json';
+    var path = __dirname + '/../tmp/'+config.mlb.code+'-'+moment().format('YYYYMMDD')+'-schedule-full.json';
     var file_exists = fs.existsSync(path);
 
     if ( file_exists )
@@ -76,7 +76,7 @@ function parseEvent(data, callback) {
         ;
 
     summary = data.summary;
-    console.log(summary);
+    //console.log(summary);
     
     result.isSpringTraining = summary.search(/Spring:/) > -1 ? true : false;
     if ( result.isSpringTraining )
@@ -110,18 +110,21 @@ function parseEvent(data, callback) {
         result.teams['home'] = trim(extract_teams[1]);
     }
 
-    result.teamIsHome = (result.teams.home == 'San Francisco') ? true : false;
-
     result.displayDay = formatDisplayDay(data.start);
     //result.teams = extract_teams;
     result.mlbGameDataUrl = makeMlbUrlFromEventData(data.url, data.start);
+
+    var matchCode = new RegExp("mlb_"+config.mlb.code+"mlb", 'g');
+    result.teamIsHome = result.mlbGameDataUrl.match(matchCode) ? true : false;
 
     //console.log(result.mlbGameDataUrl);
 
     mlbcom.getGameDataByUrl(result.mlbGameDataUrl, function(err, data){
         //console.log('data: ', data);
         if ( data.home_team_city == 'LA Dodgers')
-                data.home_team_city = 'Los Angeles';
+            data.home_team_city = 'Los Angeles';
+        if ( data.away_team_city == 'LA Dodgers')
+            data.away_team_city = 'Los Angeles';
 
         result.inTheFuture = (data.status == 'Pre-Grame' || data.status == 'Preview') ? true : false;
         result.gameStatus = data.status || 'Unknown';
@@ -176,7 +179,7 @@ module.exports = {
             days = options.days || 7,
             from_str = options.from ? moment(from).format('YYYY-MM-DD') : moment().add('days', 1).format('YYYY-MM-DD')
             ;
-console.log(from_str);
+console.log(config.schedule.full);
 
         days = parseInt(days);
 
@@ -189,7 +192,7 @@ console.log(from_str);
                 ;
 
             function getNextGameIndex(date_str, start) {
-                console.log(date_str);
+                //console.log(date_str);
                 var start_idx = start || 0,
                     idx = -1;
                     ;
@@ -256,7 +259,7 @@ console.log(from_str);
                                 {
                                     var key = moment(data.start).format("YYYY-MM-DD");
                                     var gameDay = games[key];
-                                    console.log('gameDay ['+key+']: ', gameDay);
+                                    //console.log('gameDay ['+key+']: ', gameDay);
                                     if ( gameDay )
                                         data.formatDay = gameDay.formatDay;
                                     data.isGame = true;

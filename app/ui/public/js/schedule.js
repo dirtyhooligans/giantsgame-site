@@ -17,7 +17,7 @@ var initSchedule = function() {
     {
         var gametime,
             gametime_title,
-            isHomeTeam = (todaysGame.teams.home == 'San Francisco') ? true : false,
+            isHomeTeam = scheduleData.day_of.teamIsHome,
             team_name  = isHomeTeam ? todaysGame.gameData.home_team_name : todaysGame.gameData.away_team_name,
             team_city  = isHomeTeam ? todaysGame.gameData.home_team_city : todaysGame.gameData.away_team_city,
             opp_name   = isHomeTeam ? todaysGame.gameData.away_team_name : todaysGame.gameData.home_team_name,

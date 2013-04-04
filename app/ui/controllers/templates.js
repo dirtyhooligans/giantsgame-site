@@ -11,7 +11,7 @@ module.exports = {
     getTemplate : function(name, data, callback)
     {
         var fileName = __dirname + '/../../ui/views/' + name + '.jade',
-            context  = JSON.parse(JSON.stringify(data))
+            context  = {'config':config, 'data':JSON.parse(JSON.stringify(data))};
             ;
         //console.log('context: ', context);
 

@@ -1,8 +1,8 @@
-if (locals.games)
-    each game, date in games
+if (locals.data.games)
+    each game, date in data.games
         if game.isGame
             .span2
-                if game.gameData.home_code == 'sfn'
+                if game.gameData.home_code == config.mlb.code
                     .row-fluid(align="center").day #{game.formatDay.ddd} 
                     .row-fluid(align="center").vsat vs
                     .row-fluid(align="center").opp #{game.gameData.away_team_name}

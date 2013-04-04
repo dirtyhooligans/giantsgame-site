@@ -22,6 +22,7 @@ app.configure(function()
 app.get('/', function(request, response)
 {
     //config.modifyByHost(request.host);
+    //config.setHost(request.host);
 
     var format = request.query['f'] || 'html',
         day = request.query['d'] || request.query['day'] || null
@@ -68,6 +69,8 @@ app.get('/', function(request, response)
 
 app.get('/full', function(request, response)
 {
+    //global.site = request.host;
+
     var day  = request.query['d'] || 'today',
         format = request.query['f'] || 'html'
         ;
@@ -113,6 +116,8 @@ app.get('/full', function(request, response)
 
 app.get('/upcoming', function(request, response)
 {
+    //global.site = request.host;
+
     var format = request.query['f'] || 'html',
         days    = request.query['d'] || request.query['days'] || null,
         from   = request.query['from'] || null

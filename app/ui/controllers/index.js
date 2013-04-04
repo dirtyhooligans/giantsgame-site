@@ -5,7 +5,8 @@ var express   = require('express'),
     //db        = require('../../db'),
     config    = require('../../config'),
     logger    = require('../../lib/logger'),
-    gitUtil   = require('../../lib/git_util')
+    gitUtil   = require('../../lib/git_util'),
+    sites     = require('../../lib/sites_util')
 
     ;
 
@@ -44,6 +45,13 @@ app.configure(function()
 
     app.use(express.bodyParser());
     app.use(express.static(home + '/public'));
+
+    app.use(sites.config(config));
+
+    sites.register('local.giantsga.me', require('../../config/sites/giantsga.me'));
+    sites.register('giantsga.me', require('../../config/sites/giantsga.me'));
+    sites.register('local.dodgersga.me', require('../../config/sites/dodgersga.me'));
+    sites.register('dodgersga.me', require('../../config/sites/dodgersga.me'));
    
     app.use(app.router);
     
@@ -53,6 +61,7 @@ app.configure(function()
     // the error handler is strategically placed *below* the app.router; if it
     // were above it would not receive errors from app.get() etc 
     app.use(require('../../lib/errors').middleware);
+
 
     gitUtil.getCurrentVersion(__dirname, function(err, version)
     {
@@ -68,6 +77,7 @@ app.configure(function()
 
 app.get('/', function(request, response)
 {
+    //global.site = request.host;
     //config.modifyByHost(request.host);
 
     response.locals = {

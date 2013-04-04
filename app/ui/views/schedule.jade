@@ -1,16 +1,16 @@
 #schedule.row-fluid
     .span12(align="center") 
         .row-fluid
-            if ( search.display == "Yesterday" )
-                h4.muted Did the Giants Play #{search.display}? 
+            if ( data.search.display == "Yesterday" )
+                h4.muted Did the #{config.team.name} Play #{data.search.display}? 
             else
-                h4.muted Are the Giants Playing #{search.display}? 
+                h4.muted Are the #{config.team.name} Playing #{data.search.display}? 
         .row-fluid
-            if schedule.day_of
-                if schedule.day_of.teams.home == 'San Francisco'
+            if data.schedule.day_of
+                if data.schedule.day_of.teamIsHome
                     h2 Yup
                 else
-                    if ( search.display == "Yesterday" )
+                    if ( data.search.display == "Yesterday" )
                         h6.muted(style="line-height:2px;") Yes, but they were
                     else
                         h6.muted(style="line-height:2px;") Yes, but they're 
@@ -21,7 +21,7 @@ hr
 .row-fluid &nbsp;
 .row-fluid
     .span9(align="center") 
-        if schedule.day_of
+        if data.schedule.day_of
             .row-fluid
                 .span5
                     #teamCity.row-fluid.muted Team City
@@ -29,7 +29,7 @@ hr
                         h3 Team
                     #teamInfo.row-fluid.team-record
                     .row-fluid &nbsp;
-                    if schedule.day_of.inTheFuture
+                    if data.schedule.day_of.inTheFuture
                         #teamProbables.row-fluid
                             .row-fluid.pitcher_name Name
                             .row-fluid.pitcher_info Info
@@ -39,7 +39,7 @@ hr
                 .span2
                     .row &nbsp;
                     #vsat.row 
-                        if schedule.day_of.teams.home == 'San Francisco'
+                        if data.schedule.day_of.teamIsHome
                             h2.muted vs
                         else 
                             h2.muted @
@@ -52,7 +52,7 @@ hr
                         h3 Opp
                     #oppInfo.row-fluid.opp-record
                     .row-fluid &nbsp;
-                    if schedule.day_of.inTheFuture
+                    if data.schedule.day_of.inTheFuture
                         #oppProbables.row-fluid
                             .row-fluid.pitcher_name Name
                             .row-fluid.pitcher_info Info
@@ -63,51 +63,51 @@ hr
             #gameLocation.row.muted(align="center") Location Info
         else
             .row
-                if search.display 
-                    h3.muted Dang.. No Game #{search.display}
+                if data.search.display 
+                    h3.muted Dang.. No Game #{data.search.display}
                 else
                     h3.muted Dang... No Game
                 
     #nextgame.span3(align="center").well
-        if search.display == 'Today'
-            if (schedule.day_after)
-                h4 #{schedule.day_after.displayDay}
+        if data.search.display == 'Today'
+            if (data.schedule.day_after)
+                h4 #{data.schedule.day_after.displayDay}
             else
                 h4 Tomorrow
-        else if search.display == 'Yesterday'
-            if (schedule.day_after)
-                h4 #{schedule.day_after.displayDay}
+        else if data.search.display == 'Yesterday'
+            if (data.schedule.day_after)
+                h4 #{data.schedule.day_after.displayDay}
             else
                 h4 Today
         else
-            if (schedule.day_after)
-                h4 #{schedule.day_after.displayDay}
+            if (data.schedule.day_after)
+                h4 #{data.schedule.day_after.displayDay}
             else
-                h4 #{schedule.next_game.displayDay}
-        if schedule.day_after 
+                h4 #{data.schedule.next_game.displayDay}
+        if data.schedule.day_after 
             .row-fluid
-            if schedule.day_after.teams.home == 'San Francisco'
+            if data.schedule.day_after.teamIsHome
                 .row-fluid(align="center") At Home vs
                 .row-fluid(align="center")
-                    h3 #{schedule.day_after.teams.away}
+                    h3 #{data.schedule.day_after.teams.away}
             else
                 .row-fluid(align="center") Away at
                 .row-fluid(align="center") 
-                    h3 #{schedule.day_after.teams.home}
+                    h3 #{data.schedule.day_after.teams.home}
         else
             h5.muted No Game
             hr
             h6.muted Next Game: 
-            if (! schedule.day_after )
-                h4 #{schedule.next_game.displayDay}
-            if schedule.next_game.teams.home == 'San Francisco'
+            if (! data.schedule.day_after )
+                h4 #{data.schedule.next_game.displayDay}
+            if data.schedule.next_game.teamIsHome
                 .row-fluid(align="center") At Home vs
                 .row-fluid(align="center")
-                    h3 #{schedule.next_game.teams.away}
+                    h3 #{data.schedule.next_game.teams.away}
             else
                 .row-fluid(align="center") Away at
                 .row-fluid(align="center") 
-                    h3 #{schedule.next_game.teams.home}
+                    h3 #{data.schedule.next_game.teams.home}
                 .row-fluid
         #nextgame_time.row-fluid Game Time:
             h4 
