@@ -6,13 +6,12 @@ function merge(obj1, obj2) {
   for (var p in obj2) {
     try {
       // Property in destination object set; update its value.
-      if ('function' == typeof obj2[p]) continue;
+      if ('function' == typeof obj2[p]) { console.log('a function '); continue; }
       if ( obj2[p].constructor==Object ) {
         obj1[p] = merge(obj1[p], obj2[p]);
-
+        console.log('merge: ', obj1[p], obj2[p]);
       } else {
         obj1[p] = obj2[p];
-
       }
     } catch(e) {
       // Property in destination object not set; create it and set its value.
@@ -25,8 +24,9 @@ function merge(obj1, obj2) {
 config.setSite = function(cfg, next){
     
     //console.log('set site config', cfg);
-    
-    config = merge(config, cfg);
+
+    //config = merge(config, cfg);
+    config.site = cfg;
 
     next();
 } 

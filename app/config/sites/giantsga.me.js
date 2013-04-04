@@ -1,6 +1,13 @@
 module.exports = {
-    info : {
-        name : 'GiantsGa.me'
+    name : 'GiantsGa.me',
+    description : 'Are the San Francisco Giants playing today?',
+    team : {
+        name : 'Giants',
+        city : 'San Francisco',
+        favicon : 'sf.ico',
+        logo : {
+            header : 'images/sf.png'
+        }
     },
     schedule : {
         full : 'http://mlb.mlb.com/soa/ical/schedule.ics?team_id=137&season=2013',
@@ -12,12 +19,4 @@ module.exports = {
         code : 'sfn',
         url : 'http://sanfrancisco.giants.mlb.com/'
     },
-    team : {
-        name : 'Giants',
-        city : 'San Francisco',
-        favicon : 'sf.ico',
-        logo : {
-            header : 'images/sf.png'
-        }
-    }
 }

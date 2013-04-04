@@ -18,8 +18,8 @@ Sites.prototype.config = function(cfg) {
 
 };
 
-Sites.prototype.register = function(host, settings) {
-    this.hostDictionary[host] = settings;
+Sites.prototype.register = function(host, cfg) {
+    this.hostDictionary[host] = cfg;
 };
 
 module.exports = new Sites();

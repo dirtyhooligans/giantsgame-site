@@ -1,6 +1,13 @@
 module.exports = {
-    info : {
-        name : 'DodgersGa.me'
+    name : 'DodgersGa.me',
+    description : 'Are the Los Angeles Dodgers playing today?',
+    team : {
+        name : 'Dodgers',
+        city : 'Los Angeles',
+        favicon : 'la.ico',
+        logo : {
+            header : 'images/la.png'
+        }
     },
     schedule : {
         full : 'http://mlb.mlb.com/soa/ical/schedule.ics?team_id=119&season=2013',
@@ -11,13 +18,5 @@ module.exports = {
         id : '119',
         code : 'lan',
         url : 'http://losangeles.dodgers.mlb.com/'
-    },
-    team : {
-        name : 'Dodgers',
-        city : 'Los Angeles',
-        favicon : 'la.ico',
-        logo : {
-            header : 'images/la.png'
-        }
     }
 }

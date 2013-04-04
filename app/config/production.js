@@ -1,8 +1,8 @@
 module.exports = {
     info : {
-        name        : 'GiantsGa.me',
-        tagline     : 'a simple site to check if the giants are playing or not',
-        description : '',
+        name        : 'BaseballGa.me',
+        tagline     : 'is there a baseball game today?',
+        description : 'a simple site to quickly check if there is a baseball game today for a specific team.',
         port        : 8080,
         cookieKey   : 'keyboard cat',
         salt        : 'more keyboard cat!'
@@ -10,12 +10,6 @@ module.exports = {
 
     ui : {
         
-    },
-
-    schedule : {
-        full : 'http://mlb.mlb.com/soa/ical/schedule.ics?team_id=137&season=2013',
-        home : 'http://mlb.mlb.com/soa/ical/schedule.ics?home_team_id=137&season=2013',
-        away : 'http://mlb.mlb.com/soa/ical/schedule.ics?away_team_id=137&season=2013'
     },
 
     paths : {

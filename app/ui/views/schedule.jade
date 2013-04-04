@@ -2,9 +2,9 @@
     .span12(align="center") 
         .row-fluid
             if ( data.search.display == "Yesterday" )
-                h4.muted Did the #{config.team.name} Play #{data.search.display}? 
+                h4.muted Did the #{config.site.team.name} Play #{data.search.display}? 
             else
-                h4.muted Are the #{config.team.name} Playing #{data.search.display}? 
+                h4.muted Are the #{config.site.team.name} Playing #{data.search.display}? 
         .row-fluid
             if data.schedule.day_of
                 if data.schedule.day_of.teamIsHome

@@ -12,8 +12,8 @@ function getSchedule(url, callback) {
     var events = [],
         file
         ;
-
-    var path = __dirname + '/../tmp/'+config.mlb.code+'-'+moment().format('YYYYMMDD')+'-schedule-full.json';
+console.log('getSchedule: ' + url);
+    var path = __dirname + '/../tmp/'+config.site.mlb.code+'-'+moment().format('YYYYMMDD')+'-schedule-full.json';
     var file_exists = fs.existsSync(path);
 
     if ( file_exists )
@@ -114,7 +114,7 @@ function parseEvent(data, callback) {
     //result.teams = extract_teams;
     result.mlbGameDataUrl = makeMlbUrlFromEventData(data.url, data.start);
 
-    var matchCode = new RegExp("mlb_"+config.mlb.code+"mlb", 'g');
+    var matchCode = new RegExp("mlb_"+config.site.mlb.code+"mlb", 'g');
     result.teamIsHome = result.mlbGameDataUrl.match(matchCode) ? true : false;
 
     //console.log(result.mlbGameDataUrl);
@@ -166,7 +166,7 @@ module.exports = {
     getFullSchedule : function(options, callback) {
         var result = {}
             ;
-        getSchedule(config.schedule.full, function(err, data){
+        getSchedule(config.site.schedule.full, function(err, data){
             result.total  = data.length;
             result.events = data;
             callback.apply(undefined, [err, result])
@@ -179,11 +179,11 @@ module.exports = {
             days = options.days || 7,
             from_str = options.from ? moment(from).format('YYYY-MM-DD') : moment().add('days', 1).format('YYYY-MM-DD')
             ;
-console.log(config.schedule.full);
+console.log(config.site.schedule.full);
 
         days = parseInt(days);
 
-        getSchedule(config.schedule.full, function(err, data){
+        getSchedule(config.site.schedule.full, function(err, data){
 
             var total_events = data.length,
                 events = [],
@@ -324,7 +324,7 @@ console.log(config.schedule.full);
             ;
 
 
-            getSchedule(config.schedule.full, function(err, data){
+            getSchedule(config.site.schedule.full, function(err, data){
 
                 var total_events = data.length;
 
