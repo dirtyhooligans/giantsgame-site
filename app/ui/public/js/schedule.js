@@ -1,5 +1,10 @@
 var scheduleData,
-    timezoneOffset = -3 // EST to PST
+    timezones = {
+        'PT' : -3,
+        'CT' : -2,
+        'MT' : -1,
+        'ET' : 0
+    } // EST to PST
     upcomingLoaded = false;
     ;
 
@@ -27,6 +32,8 @@ var initSchedule = function() {
             opp_wins   = isHomeTeam ? todaysGame.gameData.away_win  : todaysGame.gameData.home_win,
             opp_loss   = isHomeTeam ? todaysGame.gameData.away_loss : todaysGame.gameData.home_loss,
 
+            team_timezone = isHomeTeam ? todaysGame.gameData.home_time_zone : todaysGame.gameData.away_time_zone,
+ 
             location_info = todaysGame.location,
 
             team_score,
@@ -36,7 +43,7 @@ var initSchedule = function() {
         if ( todaysGame.gameData.status == "Preview" || todaysGame.gameData.status == "Pre-Game" )
         {
             //gametime_title = todaysGame.;
-            gametime = moment(todaysGame.start).add('hours', timezoneOffset).format('LT');
+            gametime = moment(todaysGame.start).add('hours', timezones[team_timezone]).format('LT');
             
             team_probable_pitcher = isHomeTeam ? todaysGame.gameData.home_probable_pitcher : todaysGame.gameData.away_probable_pitcher;
             opp_probable_pitcher  = isHomeTeam ? todaysGame.gameData.away_probable_pitcher : todaysGame.gameData.home_probable_pitcher;
@@ -76,8 +83,8 @@ var initSchedule = function() {
                 }
                 
             }
-            $("#teamScore h1").html(team_score);
-            $("#oppScore h1").html(opp_score);
+            $(".team-score").html(team_score);
+            $(".opp-score").html(opp_score);
         }
 
         $("#dayof-gametime-title").html(gametime_title);
@@ -90,21 +97,30 @@ var initSchedule = function() {
     }
 
 
-    var nextGame = scheduleData.next_game || false;
+    var nextGame = scheduleData.next_game || false,
+        nextgame_team_timezone
+        ;
     var previousGame = scheduleData.previous_game || {};
 
-    $("#nextgame_time h4").html(moment(nextGame.start).add('hours', timezoneOffset).format('LT'));
 
+    if ( nextGame )
+    {
+        nextgame_team_timezone = nextGame.teamIsHome ? nextGame.gameData.home_time_zone : nextGame.gameData.away_time_zone;
+console.log(nextgame_team_timezone);
+        $("#nextgame_time h4").html(moment(nextGame.start).add('hours', timezones[nextgame_team_timezone]).format('LT'));
 
-    $("#teamName h3").html(team_name);
-    $("#teamCity").html(team_city);
+    }
+    
 
-    $("#oppName h3").html(opp_name);
-    $("#oppCity").html(opp_city);
+    $(".team-name").html(team_name);
+    $(".team-city").html(team_city);
 
-    $("#oppName h3").html(opp_name);
+    $(".opp-name").html(opp_name);
+    $(".opp-city").html(opp_city);
 
-    $("#gameLocation").html(location_info);
+    $(".opp-name").html(opp_name);
+
+    $(".game-location").html(location_info);
 
     loadUpcomingGames();
 

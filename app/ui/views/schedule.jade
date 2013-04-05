@@ -22,12 +22,12 @@ hr
 .row-fluid
     .span9(align="center") 
         if data.schedule.day_of
-            .row-fluid
+            .row-fluid.hidden-phone
                 .span5
-                    #teamCity.row-fluid.muted Team City
-                    #teamName.row-fluid 
-                        h3 Team
-                    #teamInfo.row-fluid.team-record
+                    .row-fluid.muted.team-city Team City
+                    .row-fluid
+                        h3.team-name Team
+                    .row-fluid.team-record
                     .row-fluid &nbsp;
                     if data.schedule.day_of.inTheFuture
                         #teamProbables.row-fluid
@@ -47,9 +47,9 @@ hr
                     #dayof-gametime.row
                         h3 Time
                 .span5
-                    #oppCity.row-fluid.muted Opp City
-                    #oppName.row-fluid 
-                        h3 Opp
+                    .row-fluid.muted.opp-city Opp City
+                    .row-fluid
+                        h3.opp-name Opp
                     #oppInfo.row-fluid.opp-record
                     .row-fluid &nbsp;
                     if data.schedule.day_of.inTheFuture
@@ -57,10 +57,37 @@ hr
                             .row-fluid.pitcher_name Name
                             .row-fluid.pitcher_info Info
                     else
-                        #oppScore.row-fluid
-                            h1 0
+                        .row-fluid
+                            h1.opp-score 0
                     .row-fluid &nbsp;
-            #gameLocation.row.muted(align="center") Location Info
+            .row-fluid.visible-phone
+                table(width="100%")
+                    tr
+                        td(width="40%")
+                            table(width="100%",style="text-align:center;")
+                                tr
+                                    td.team-city
+                                tr
+                                    td.team-name Team Name
+                                tr    
+                                    td.team-score(style="text-align:center;") 
+                        td(width="20%",style="text-align:center;")
+                            if data.schedule.day_of.teamIsHome
+                                    h3 vs
+                                else
+                                    h3 @
+                        td(width="40%")
+                            table(width="100%",style="text-align:center;")
+                                tr
+                                    td.opp-city
+                                tr
+                                    td.opp-name Opp Name
+                                tr
+                                    td.opp-score 
+            .row.muted(style="font-size:12px") Location
+                br
+                .game-location(align="center") Location Info
+            hr
         else
             .row
                 if data.search.display 

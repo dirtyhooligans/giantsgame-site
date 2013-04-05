@@ -111,13 +111,54 @@ body {
         text-transform:uppercase;
 
     }
+.team-city, .opp-city {
+    color:#c3c3c3;
+    text-transform:uppercase;
+    
+}
+
 @media (max-width: 767px) {
     #upcoming > div {
         min-height: 54px;
         margin-bottom: 10px;
     }
+
+    .phone-team, .phone-opp, .phone-vsat {
+        position:relative;
+        width:29%;
+        float:left;
+    }
+
+    .phone-vsat{
+        width:30px;
+    }
+    
+    .team-city, .opp-city {
+        font-size:12px;
+    }
+
+    .team-name, .opp-name {
+        width:30%;
+        color: #333;
+        padding:5px;
+        font-size:16px;
+        font-weight:bold;
+        text-align:center;
+        font-size:22px;
+    }
+    .team-score, .opp-score {
+        color:#444;
+        position:relative;
+        right:0;
+        width:40px;
+        padding: 10px;
+        font-size:32px;
+    }
 }
 
+.game-location{
+    font-size:14px;
+}
 
 
 #footer { 
