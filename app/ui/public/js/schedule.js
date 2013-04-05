@@ -1,8 +1,8 @@
 var scheduleData,
     timezones = {
         'PT' : -3,
-        'CT' : -2,
-        'MT' : -1,
+        'MT' : -2,
+        'CT' : -1,
         'ET' : 0
     } // EST to PST
     upcomingLoaded = false;
@@ -58,6 +58,7 @@ var initSchedule = function() {
             $(".team-record").html('(' + team_wins + ' - ' + team_loss + ')');
             $(".opp-record").html('(' + opp_wins + ' - ' + opp_loss + ')');
 
+            $(".tvinfo").html('TV: ' + todaysGame.gameData.tv_station)
         }
         else
         { 
