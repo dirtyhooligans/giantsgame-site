@@ -40,8 +40,11 @@ var initSchedule = function() {
             team_probables_pitcher,
             opp_probables_pitcher
             ;
-            console.log(team_timezone);
-        if ( todaysGame.gameData.status == "Preview" || todaysGame.gameData.status == "Pre-Game" )
+            //console.log(team_timezone);
+        if ( todaysGame.gameData.status == "Preview" 
+                || todaysGame.gameData.status == "Pre-Game" 
+                || todaysGame.gameData.status == "Warmup"
+                )
         {
             //gametime_title = todaysGame.;
             gametime = moment(todaysGame.start).add('hours', timezones[team_timezone]).format('LT');
@@ -88,9 +91,10 @@ var initSchedule = function() {
             $(".team-score").html(team_score);
             $(".opp-score").html(opp_score);
         }
-
+console.log(gametime);
         $("#dayof-gametime-title").html(gametime_title);
         $(".game-time").html(gametime);
+        $(".tvinfo").html('TV: ' + todaysGame.gameData.tv_station)
 
     }
     else
