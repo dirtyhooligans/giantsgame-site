@@ -40,6 +40,7 @@ var initSchedule = function() {
             team_probables_pitcher,
             opp_probables_pitcher
             ;
+            console.log(team_timezone);
         if ( todaysGame.gameData.status == "Preview" || todaysGame.gameData.status == "Pre-Game" )
         {
             //gametime_title = todaysGame.;
@@ -88,7 +89,7 @@ var initSchedule = function() {
         }
 
         $("#dayof-gametime-title").html(gametime_title);
-        $("#dayof-gametime h3").html(gametime);
+        $(".game-time").html(gametime);
 
     }
     else

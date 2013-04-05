@@ -35,7 +35,7 @@ hr
                             .row-fluid.pitcher_info Info
                     else
                         #teamScore.row-fluid
-                            h1 0
+                            h1.team-score 0
                 .span2
                     .row &nbsp;
                     #vsat.row 
@@ -45,7 +45,7 @@ hr
                             h2.muted @
                     #dayof-gametime-title.row.muted
                     #dayof-gametime.row
-                        h3 Time
+                        h3.game-time Time
                 .span5
                     .row-fluid.muted.opp-city Opp City
                     .row-fluid
@@ -84,6 +84,8 @@ hr
                                     td.opp-name Opp Name
                                 tr
                                     td.opp-score 
+            .row.visible-phone
+                h4.game-time 00:00 AM
             .row.muted(style="font-size:12px") Location
                 br
                 .game-location(align="center") Location Info
