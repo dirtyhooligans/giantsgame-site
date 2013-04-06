@@ -6,7 +6,7 @@ if (locals.data.games)
                     .row-fluid(align="center").day #{game.formatDay.ddd} 
                     .row-fluid(align="center").vsat vs
                     .row-fluid(align="center").opp #{game.gameData.away_team_name}
-                    .row-fluid(align="center").opprecord (#{game.gameData.home_win} - #{game.gameData.away_loss})
+                    .row-fluid(align="center").opprecord (#{game.gameData.away_win} - #{game.gameData.away_loss})
                     .row-fluid(align="center").gametime  #{game.gameData.home_time} #{game.gameData.home_ampm}
                 else
                     .row-fluid(align="center").day #{game.formatDay.ddd} 
