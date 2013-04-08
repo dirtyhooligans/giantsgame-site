@@ -25,44 +25,56 @@ app.get('/', function(request, response)
     //config.setHost(request.host);
 
     var format = request.query['f'] || 'html',
-        day = request.query['d'] || request.query['day'] || null
+        day = request.query['d'] || request.query['day'] || null,
+        days = request.query['ud'] || null,
+        from = request.query['from'] || null,
+        result = {};
         ;
     logger.info('searching for: ' + day);
     
     var options = {
-        day : day
+        day : day,
+        days  : days,
+        from : from
     };
 
     schedule.getByDate(options, function(err, data) {
 
-        if ( err ) {
-                response.json({
-                    query : data,
-                    error : true,
-                    data  : err
-                });
-        }
-        else {
-            if ( format == 'html' ) {
-                tpl.getTemplate('home', data, function(err, template) {
-                    //console.log('template context: ', data);
-                    response.send({
+        result = data;
+
+        schedule.getUpcoming(options, function(err, data) {
+
+            result.upcoming = data;
+
+            if ( err ) {
+                    response.json({
+                        query : result,
+                        error : true,
+                        data  : err
+                    });
+            }
+            else {
+                if ( format == 'html' ) {
+                    tpl.getTemplate('home', result, function(err, template) {
+                        //console.log('template context: ', result);
+                        response.send({
+                            query : options,
+                            error : false,
+                            data  : result,
+                            display : template
+                        });
+                    });
+                }
+                else
+                {
+                    response.json({
                         query : options,
                         error : false,
-                        data  : data,
-                        display : template
+                        data  : data
                     });
-                });
+                }
             }
-            else
-            {
-                response.json({
-                    query : options,
-                    error : false,
-                    data  : data
-                });
-            }
-        }
+        });
     });
 
 });
@@ -172,6 +184,60 @@ app.get('/upcoming', function(request, response)
 
 });
 
+app.get('/boxscore', function(request, response)
+{
+    var data = {
+        innings : [
+            {
+                inning : '1',
+                away_inning_runs : '0',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '2',
+                away_inning_runs : '0',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '3',
+                away_inning_runs : '0',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '4',
+                away_inning_runs : '0',
+                home_inning_runs : '1'
+            },
+            {
+                inning : '5',
+                away_inning_runs : '0',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '6',
+                away_inning_runs : '1',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '7',
+                away_inning_runs : '0',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '8',
+                away_inning_runs : '1',
+                home_inning_runs : '0'
+            },
+            {
+                inning : '9',
+                away_inning_runs : '0',
+                home_inning_runs : '0'
+            },
+        ]
+    };
 
-
+    tpl.getTemplate('schedule/boxscore', data, function(err, template) { 
+            response.send(template);
+        });
+});
 

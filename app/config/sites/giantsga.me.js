@@ -6,7 +6,8 @@ module.exports = {
         city : 'San Francisco',
         favicon : 'sf.ico',
         logo : {
-            header : 'images/sf.png'
+            header : 'images/sf.png',
+            main : '/images/sf.png'
         }
     },
     schedule : {

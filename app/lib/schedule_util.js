@@ -176,7 +176,7 @@ module.exports = {
     getUpcoming : function(options, callback) {
         var result = {},
             err = false,
-            days = options.days || 7,
+            days = options.days || 5,
             from_str = options.from ? moment(from).format('YYYY-MM-DD') : moment().add('days', 1).format('YYYY-MM-DD')
             ;
 console.log(config.site.schedule.full);

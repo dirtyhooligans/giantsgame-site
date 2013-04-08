@@ -1,5 +1,8 @@
 var env = (process.env.NODE_ENV = process.env.NODE_ENV || 'development');
 var config = require('./' + env);
+var teams = require('../lib/teams');
+    config.teams = teams;
+    
 
 function merge(obj1, obj2) {
 

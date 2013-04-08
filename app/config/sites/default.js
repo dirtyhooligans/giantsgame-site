@@ -1,13 +1,10 @@
 module.exports = {
-    name : 'DodgersGa.me',
-    description : 'Are the Los Angeles Dodgers playing today?',
+    name : 'BaseballGa.me',
+    description : 'Is there a baseball game today?',
     team : {
-        name : 'Dodgers',
-        city : 'Los Angeles',
         favicon : 'la.ico',
         logo : {
-            header : 'images/la.png',
-            main : 'images/la.png'
+            header : 'images/la.png'
         }
     },
     schedule : {

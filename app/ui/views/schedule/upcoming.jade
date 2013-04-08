@@ -1,5 +1,5 @@
-if (locals.data.games)
-    each game, date in data.games
+if (locals.data.upcoming.games)
+    each game, date in data.upcoming.games
         if game.isGame
             .span2
                 if game.gameData.home_code == config.site.mlb.code

@@ -1,0 +1,43 @@
+dayOfData = data.schedule.day_of.gameData 
+- var inningsLeftArr = [];
+inningsLeft = (9-data.schedule.day_of.gameData.linescore.length);
+- for(var i = 0; i < inningsLeft; i ++){ inningsLeftArr.push(9-i); }
+table.dayof-linescore(border="0")
+    tr
+        td.teams
+            table(width="100%")
+                tr
+                    td.status #{dayOfData.status}
+                tr
+                    td.away #{dayOfData.away_name_abbrev}
+                tr
+                    td.home #{dayOfData.home_name_abbrev}
+        each inning in dayOfData.linescore
+            td
+                table(width="100%")
+                    tr
+                        td.inning #{inning.inning}
+                    tr
+                        if inning.away_inning_runs == ''
+                            td.inning-away-runs 0
+                        else
+                            td.inning-away-runs #{inning.away_inning_runs}
+                    tr
+                        if inning.home_inning_runs == ''
+                            if inning.inning == '9' && dayOfData.status == 'Final'
+                                td.inning-home-runs.muted x
+                            else
+                                td.inning-home-runs &nbsp;
+                        else
+                            td.inning-home-runs #{inning.home_inning_runs}
+        if inningsLeft > 0
+            for inn in inningsLeftArr
+                td
+                    table(width="100%")
+                        tr
+                            td.inning #{inn}
+                        tr
+                            td.inning-away-runs &nbsp;
+                        tr
+                            td.inning-home-runs &nbsp;
+                        

@@ -75,9 +75,8 @@ var initSchedule = function() {
             }
             else if ( todaysGame.gameData.status == "Final" || todaysGame.gameData.status == "Game Over" )
             {
-                if ( team_score > opp_score )
+                if ( parseInt(team_score) > parseInt(opp_score) )
                 {
-                    
                     gametime_title = 'yay.. they';
                     gametime = 'WON';
                 }
@@ -128,7 +127,7 @@ console.log(nextgame_team_timezone);
 
     $(".game-location").html(location_info);
 
-    loadUpcomingGames();
+    //loadUpcomingGames();
 
 }
     
